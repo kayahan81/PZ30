@@ -1,0 +1,20 @@
+schema:
+  - graph/schema.graphqls
+
+exec:
+  filename: graph/generated/generated.go
+  package: generated
+
+model:
+  filename: graph/model/models_gen.go
+  package: model
+
+resolver:
+  layout: follow-schema
+  dir: graph
+  package: graph
+  filename_template: "{name}.resolvers.go"
+
+models:
+  Task:
+    model: tech-ip-sem2/services/graphql/internal/repository.Task
